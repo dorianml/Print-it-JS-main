@@ -56,41 +56,35 @@ function dotsActiveBanner() {
 }
 
 function bannerArrowLeftIsClicked() {
-	dotsActiveBanner();
 	if (indexBanner != 0) {
 		 indexBanner = indexBanner - 1;
 	} else {
 		 indexBanner = 3;
-	}
+	};
+	dotsActiveBanner();
 };
 
 function bannerArrowRightIsClicked() {
-	console.log("timer working")
-	console.log(indexBanner);
-	dotsActiveBanner();
 	if (indexBanner != 3) {
 		indexBanner = indexBanner + 1;
-		console.log("not 0");
 		console.log(indexBanner);
 	} else {
 		indexBanner = 0;
-	}
+	};
+	dotsActiveBanner();
 	bannerImage.src=slides[indexBanner].src;
 };
 
 window.onload = function() {
-	indexBanner = 1;
+	// indexBanner = 0;
 	dotBanner0.style.background="white"
 	console.log(indexBanner);
 	setInterval(() => bannerArrowRightIsClicked() , 4000);
 };
 
-
 arrowLeft.addEventListener("click", 
 	function left(){
 	bannerArrowLeftIsClicked();
-	alert('LeftOk');
-	console.log('OkLeftConsole');
 	console.log(indexBanner);
 	bannerImage.src=slides[indexBanner].src;
 });
@@ -98,9 +92,9 @@ arrowLeft.addEventListener("click",
 arrowRight.addEventListener("click",
 	 function right(){
 		bannerArrowRightIsClicked();
-		alert('RightOk');
-		console.log('OkRightConsole');
+		// alert('RightOk');
 		console.log(indexBanner);
+
 });
 
 // bannerImage.src=slides[indexBanner][0];
